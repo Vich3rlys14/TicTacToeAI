@@ -1,8 +1,13 @@
-from collections import MutableSequence as lists
+import collections 
 from Board import *
 import random
 
+try:
+    collectionsAbc = collections.abc
+except AttributeError:
+    collectionsAbc = collections
 
+lists = collectionsAbc.MutableSequence
 def copy_list(arr):
 	copy = []
 	for i,elt in enumerate(arr):
